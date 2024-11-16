@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Hotels Ryban Duabi</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="/dashboard">Mis reservas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="/habitaciones">Habitaciones</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h2 class="my-4 text-center">Reserva de Habitación</h2>
+
+  <div class="row">
+    <!-- Columna para los detalles de la habitación -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4>Detalles de la Habitación</h4>
+        </div>
+        <div class="card-body">
+          <p><strong>ID de Habitación:</strong> {{ id_habitacion }}-Número de habitacioón::{{ numero }}</p>
+          <p><strong>Nombre::</strong> {{ nombre }}</p>
+          <p><strong>Tipo de Habitación:</strong> {{ tipo }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna para el formulario de reserva -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h4>Formulario de Reserva</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="verificarReserva()">
+            <div class="form-group mb-2">
+              <label for="fechae">Fecha de entrada</label>
+              <input type="date" id="fechae" [(ngModel)]="fechaEntrada" name="fechaEntrada" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="fechas">Fecha de salida</label>
+              <input type="date" id="fechas" [(ngModel)]="fechaSalida" name="fechaSalida" class="form-control" required>
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" class="btn btn-success btn-block">Confirmar Reserva</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
